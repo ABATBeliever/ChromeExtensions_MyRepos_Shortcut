@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "MyRepos Shortcut",
+  "version": "1.0",
+  "description": "GitHubのダッシュボードに自分のリポジトリへ移動するボタンを追加",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://github.com/"
+  ],
+  "action": {
+    "default_popup": "options.html"
+  },
+   "icons": {
+      "48": "icon48.png",
+      "128": "icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "options_page": "options.html"
+}
